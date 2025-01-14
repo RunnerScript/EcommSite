@@ -9,12 +9,11 @@ import Loader from '../components/loader/loader';
 import { useFetchData } from '../apis/useFetchData';
 const AppRoutes = () => {
     const isAuthenticated = true;
-    const { data, error, isLoading } = useFetchData('https://fakestoreapi.com/products/categories', []);
+    const { data: categories, error, isLoading } = useFetchData('https://fakestoreapi.com/products/categories', []);
     return (
         <>
             <Router>
-                <Header />
-                <Loader />
+                <Header categories={categories} isLoading={isLoading} />
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/aboutus" element={<AboutUs />} />
