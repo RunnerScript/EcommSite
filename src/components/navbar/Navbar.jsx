@@ -6,7 +6,7 @@ export default function Navbar({ categories, isLoading }) {
 
     return (
         <div className='flex justify-between overflow-auto'>
-            <ul className="flex list-none h-[3rem] gap-4 items-center px-4 text-white">
+            <ul className="flex list-none h-[3rem] gap-4 items-center px-10 text-white">
                 {isLoading && <Loader />}
                 {
                     categories && categories.length ? categories.map((item, index) => {

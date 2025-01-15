@@ -7,8 +7,8 @@ export const ProductListing = () => {
     const { data: products, error, isLoading } = useFetchData(`https://fakestoreapi.com/products/category/${categoryName}`, []);
 
     return (
-        <>
+        <div className="flex flex-wrap justify-center">
             {products && products.length > 0 ? products.map(product => <Product key={product.id} product={product} />) : ''}
-        </>
+        </div>
     )
 }

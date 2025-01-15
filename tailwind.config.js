@@ -13,6 +13,9 @@ export default {
         'bounce-fast': 'bounceFast 1.3s linear infinite',
 
       },
+      boxShadow: {
+        'dramatic-inset': 'inset 0 0 50px rgba(0, 0, 0, 0.3)',
+      },
       keyframes: {
         bounceSlow: {
           '0%, 100%': { transform: 'translateY(0)' },
