@@ -7,6 +7,7 @@ import PrivateRoutes from './PrivateRoutes';
 import Dashboard from '../dashboard/Dashboard';
 import Loader from '../components/loader/loader';
 import { useFetchData } from '../apis/useFetchData';
+import { ProductListing } from '../pages/productListing/ProductListing';
 const AppRoutes = () => {
     const isAuthenticated = true;
     const { data: categories, error, isLoading } = useFetchData('https://fakestoreapi.com/products/categories', []);
@@ -16,9 +17,9 @@ const AppRoutes = () => {
                 <Header categories={categories} isLoading={isLoading} />
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/aboutus" element={<AboutUs />} />
+                    {/* Dynamic routing */}
+                    <Route path='/products/:categoryName' element={<ProductListing />} />
                     <Route path="*" element={<PageNotFound />} />
-                    <Route path='/dashboard' element={<PrivateRoutes element={<Dashboard />} isUserAuthenticated={isAuthenticated} />} />
                 </Routes>
 
             </Router>

@@ -9,10 +9,10 @@ export default function Navbar({ categories, isLoading }) {
             <ul className="flex list-none h-[3rem] gap-4 items-center px-4 text-white">
                 {isLoading && <Loader />}
                 {
-                    categories && categories.length ? categories.map((item) => {
+                    categories && categories.length ? categories.map((item, index) => {
                         return (
-                            <li className='whitespace-nowrap'>
-                                <NavLink to='/'>{item}</NavLink>
+                            <li className='whitespace-nowrap' key={index}>
+                                <NavLink to={`/products/${item}`}>{item}</NavLink>
                             </li>
                         )
                     }) : <></>
