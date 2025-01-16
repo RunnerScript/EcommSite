@@ -16,7 +16,7 @@ const AppRoutes = () => {
             <Router>
                 <Header categories={categories} isLoading={isLoading} />
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<ProductListing />} />
                     {/* Dynamic routing */}
                     <Route path='/products/:categoryName' element={<ProductListing />} />
                     <Route path="*" element={<PageNotFound />} />

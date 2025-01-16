@@ -3,12 +3,14 @@ import reactLogo from './assets/react.svg'
 
 import Header from './components/header/Header'
 import AppRoutes from './routes/AppRoutes'
-
+import CartProvider from './contexts/cart/CartProvider'
 function App() {
 
   return (
     <>
-      <AppRoutes />
+      <CartProvider>
+        <AppRoutes />
+      </CartProvider>
     </>
   )
 }
