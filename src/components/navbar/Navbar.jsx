@@ -1,9 +1,10 @@
 
 import { Link, NavLink } from 'react-router-dom';
 import Loader from '../loader/loader';
-
+import useCart from '../../contexts/cart/useCart';
 export default function Navbar({ categories, isLoading }) {
-
+    const data = useCart();
+    console.log("My Data.", data);
     return (
         <div className='flex justify-between overflow-auto'>
             <ul className="flex list-none h-[3rem] gap-4 items-center px-10 text-white">
