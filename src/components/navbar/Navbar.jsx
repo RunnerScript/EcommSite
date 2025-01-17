@@ -2,9 +2,10 @@
 import { Link, NavLink } from 'react-router-dom';
 import Loader from '../loader/loader';
 import useCart from '../../contexts/cart/useCart';
+
 export default function Navbar({ categories, isLoading }) {
-    const data = useCart();
-    console.log("My Data.", data);
+    const { totalQuantity } = useCart();
+
     return (
         <div className='flex justify-between overflow-auto'>
             <ul className="flex list-none h-[3rem] gap-4 items-center px-10 text-white">
@@ -23,7 +24,20 @@ export default function Navbar({ categories, isLoading }) {
 
             <ul className="flex list-none h-[3rem] gap-4 items-center px-4 text-white">
                 <li>
-                    <Link to='/'> <i className="fa-solid fa-cart-shopping">Cart</i></Link>
+                    <Link to='/' className='relative'>
+
+                        <div class="flex  justify-center items-center w-8 h-8 bg-black rounded-full shadow cursor-pointer">
+                            <div class="space-y-1">
+                                <div class="w-6 h-0.5 bg-white"></div>
+                                <div class="w-6 h-0.5 bg-white"></div>
+                                <div class="w-6 h-0.5 bg-white"></div>
+                            </div>
+                        </div>
+                        <div class=" p-[0.6rem] flex items-center justify-center leading-none absolute right-0 top-0 w-2 h-2 bg-red-600 text-white text-[0.75rem]   rounded-full">
+                            {totalQuantity}
+                        </div>
+
+                    </Link>
                 </li>
             </ul>
         </div>
