@@ -18,8 +18,12 @@ const CartProvider = ({ children }) => {
         setCartState(updatedCart);
     }
 
-    const removeFromCart = (product) => {
-
+    const removeFromCart = (productId) => {
+        const updatedCart = { ...cartState }
+        if (updatedCart[productId]) updatedCart[productId].quantity -= 1;
+        if (updatedCart[productId].quantity <= 0) delete updatedCart[productId];
+        setTotalQuantity((prevQuantity) => prevQuantity - 1);
+        setCartState(updatedCart);
     }
 
     const cartContextValue = {

@@ -33,9 +33,10 @@ export default function Navbar({ categories, isLoading }) {
                                 <div class="w-6 h-0.5 bg-white"></div>
                             </div>
                         </div>
-                        <div class=" p-[0.6rem] flex items-center justify-center leading-none absolute right-0 top-0 w-2 h-2 bg-red-600 text-white text-[0.75rem]   rounded-full">
+                        {totalQuantity > 0 ? (<div class=" p-[0.6rem] flex items-center justify-center leading-none absolute right-0 top-0 w-2 h-2 bg-red-600 text-white text-[0.75rem]   rounded-full">
                             {totalQuantity}
-                        </div>
+                        </div>) : <></>}
+
 
                     </Link>
                 </li>
